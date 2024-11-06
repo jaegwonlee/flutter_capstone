@@ -9,10 +9,10 @@ class TestLoginModel {
     this.token,
   });
 
-  factory TestLoginModel.fromJson(Map<String, dynamic> json) {
+  factory TestLoginModel.fromJson(Map<String, dynamic> json, int statusCode) {
     return TestLoginModel(
-        message: json["message"] as String ?? "",
-        statusCode: json["status_code"] as int ?? 0,
-        token: json["token"] as String ?? "");
+        message: json["message"] ?? "",
+        statusCode: statusCode,
+        token: json["token"] ?? "");
   }
 }
